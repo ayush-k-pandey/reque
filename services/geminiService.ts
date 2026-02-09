@@ -3,7 +3,7 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { NewsUpdate } from "../types";
 
 // Initializing the GoogleGenAI client with the API key from environment variables.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || "PLACEHOLDER_KEY"});
 
 export const getAIGeneratedAlerts = async (location: string): Promise<NewsUpdate[]> => {
   try {
